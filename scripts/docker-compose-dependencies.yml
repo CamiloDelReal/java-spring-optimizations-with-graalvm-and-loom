@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+
+  mysqldb:
+    image: mysql:8.1.0-oracle
+    mem_limit: 800m
+    hostname: mysqldb
+    container_name: mysqldb_dev
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: optimization_test_db
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - springbootoptimizationsnet
+
+networks:
+  springbootoptimizationsnet:
